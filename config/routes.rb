@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'theory/index'
+  get 'theory', to: 'theory#index'
 
-  get 'theory/show'
+  get 'theory/show/:page', to: 'theory#show', as: 'theory_page'
 
   get 'home/index'
 

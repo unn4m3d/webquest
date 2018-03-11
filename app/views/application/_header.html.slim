@@ -6,4 +6,16 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark
   .collapse.navbar-collapse#navbarSupportedContent
     ul.navbar-nav.mr-auto
       li.nav-item
-        a.nav-link href="/" =t('home')
+        a.nav-link href="/"
+          =t('home')
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          =t('theory.heading')
+        .dropdown-menu aria-labelledby="navbarDropdown"
+          a.dropdown-item href=theory_path
+            =t('theory.general')
+          .dropdown-divider
+
+          - for page in TheoryHelper.pages
+            a.dropdown-item href=theory_page_path(page)
+              =t("theory.page.#{page}")

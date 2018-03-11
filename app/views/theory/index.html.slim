@@ -1,2 +1,7 @@
-h1 Theory#index
-p Find me in app/views/theory/index.html.slim
+.row.col-md-12
+  h2 =t('theory.heading')
+.row.col-md-12
+  ul.list-group.col-md-6
+    - for page in @pages
+      li.list-group-item
+        a href=theory_page_path(page: page) =t("theory.page.#{page}")
