@@ -1,0 +1,40 @@
+h2 Виды рекурсии
+
+p.border
+  | Рекурсия бывает 
+  strong  сложной и простой
+  | .
+
+p.border
+  strong Простая рекурсия
+  |  - вызов подпрограммы или функции непосредственно из самой себя.
+
+  pre.border.border-info
+    code
+      | void func(int a)
+        {
+
+          if(a > 0) func(a - 1);
+          // ...
+        }
+p.border
+  strong Сложная рекурсия
+  |  - вызов подпрограммы или функции через другую подпрограмму или функцию.
+
+  pre.border.border-info
+    code
+      | void bar(int);
+
+        void foo(int a)
+        {
+          if(a > 0) bar(a - 1);
+          // ...
+        }
+
+        void bar(int a)
+        {
+          if(a > 0) foo(a - 1);
+          // ...
+        }
+
+== render "links"

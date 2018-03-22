@@ -1,0 +1,7 @@
+.row
+  .col-md-6.text-center.border
+    - if @previous
+      a href=theory_page_path(@previous.to_s) ="< #{t "theory.page." + @previous.to_s}"
+  .col-md-6.text-center.border
+    - if @next
+      a href=theory_page_path(@next.to_s) ="#{t "theory.page." + @next.to_s} >"

@@ -1,0 +1,45 @@
+h2 Рекурсия на практике
+
+p.border
+  | Одним из применений рекурсии является обход дерева:
+.row
+  .col-md-4
+    h6 Код
+    pre.border.border-info
+      code
+        | typedef int value_t;
+
+          typedef struct node
+          {
+            struct node *left, *right;
+            value_t value;
+          } node_t;
+
+          void print_rec(node_t *node, int depth)
+          {
+            for(int i = 0; i < depth; ++i) putc(' ');
+            printf("%d\n", node->value);
+            if(node->left) print_rec(node->left, depth + 1);
+            if(node->right) print_rec(node->right, depth + 1);
+          }
+  .col-md-4
+    h6 Пример хода выполнения
+    figure.figure
+      img.figure-img.image-fluid.rounded alt="Не удалось загрузить" src=image_path("tree.png")
+      figcaption.figure-caption Красным показан порядок обхода
+  .col-md-4
+    h6 Пример вывода
+    pre.border.border-warning
+      code
+        | 1
+           2
+            4
+            5
+             7
+             8
+           3
+            6
+
+
+
+== render "links"

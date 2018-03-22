@@ -1,0 +1,58 @@
+h2 Рекурсия
+p.border
+  strong Рекурсия
+  |  в программировании - это вызов алгоритма, процедуры или функции из самого себя.
+    Практически любой рекурсивный алгоритм можно реализовать итеративно, однако при этом теряется читаемость кода.
+    Классическим примером задачи с использованием рекурсии является вычисление факториала (несмотря на то, что его можно вычислить и итеративно):
+  pre.border.border-info
+    code
+      | long long unsigned factorial(unsigned n)
+        {
+          if(n == 1)
+            return 1;
+          else
+            return n * factorial(n - 1);
+        }
+p.border
+  | Также, через рекурсию можно вычислить и N-ое число Фибоначчи:
+  pre.border.border-info
+    code
+      | long long unsigned fibonacci(unsigned n)
+        {
+          if(n > 1)
+            return fibonacci(n - 1) + fibonacci(n - 2);
+          else
+            return 1;
+        }
+
+p.border
+  | Для того, чтобы понять механизм работы рекурсии, посмотрите на ход выполнения следующей функции при вызове
+  code rec(5)
+  .row
+    .col
+      h6 Код
+      pre.border.border-info
+        code
+          | void rec(int n)
+            {
+              if(n > 0)
+                rec(n - 1);
+              printf("%d\n", n);
+            }
+    .col
+      h6 Вывод
+      pre.border.border-info
+        code
+          | 0
+            1
+            2
+            3
+            4
+            5
+    .col
+      h6 Ход выполнения
+      figure.figure
+        img.figure-img.image-fluid.rounded alt="Не удалось загрузить" src=image_path("control_flow.png")
+        figcaption.figure-caption Графическое представление хода выполнения
+
+== render "links"
