@@ -57,6 +57,6 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0'
 gem 'slim-rails'
 gem 'json'
-gem 'survey', '~> 0.1'
+gem 'survey', git: "https://github.com/unn4m3d/survey"
 gem 'cancancan'
 gem 'devise'
