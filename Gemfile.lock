@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/unn4m3d/survey
-  revision: 7f1c1cbc06affd81c086221b80e18757d8552d09
+  revision: 0cdf621917bdc344740a9c34619b5e20ee00329f
   specs:
     survey (0.1)
       rails (>= 3.2.6, < 6)
