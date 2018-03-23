@@ -14,4 +14,6 @@ ru:
     common:
       greeting: Привет, %{user}
     guest:
-      greeting
+      greeting: Привет, гость!
+  surveys:
+    heading: Тесты
