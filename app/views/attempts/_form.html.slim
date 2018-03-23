@@ -1,0 +1,20 @@
+h2
+  = @survey.name
+p.border
+  = @survey.description
+
+== form_for @attempt, url: attempts_path(@attempt) do |f|
+  == hidden_field_tag :survey_id, @survey.id
+  ol.border.border-info#questions
+    == f.fields_for :answers, get_answer_fields(@attempt) do |answer_fields|
+      li
+        - question = answer_fields.object.question
+        p.question
+          = question.text
+
+        ul.list-group.col-md-6
+          = collection_radio_buttons('survey_attempt[answers_attributes]', question.id, question.options, :id, :text) do |b|
+            li.radio.list-group-item
+              == b.label { b.radio_button + b.text }
+
+  == f.submit "Submit", class: 'btn btn-default'

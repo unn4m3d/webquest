@@ -1,0 +1,9 @@
+h1
+  = t('surveys.heading')
+
+- if @surveys.empty?
+  p.border.border-error
+    = t('surveys.empty')
+- else
+  ul.list-group.col-md-6
+    == render partial: 'survey', collection: @surveys

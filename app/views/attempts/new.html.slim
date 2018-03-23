@@ -1,0 +1,8 @@
+- if @survey.nil?
+  p.border.border-error
+    =t('surveys.unavailable')
+- elsif @survey.avaliable_for_participant?(@participant)
+  == render "form"
+- else
+  p.border.border-error
+    =t('surveys.no_attempts')

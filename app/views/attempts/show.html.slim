@@ -1,0 +1,19 @@
+h2
+  = @attempt.survey.name
+
+p.border
+  = @attempt.survey.description
+
+ol.border.border-info
+  - for answer in @attempt.answers
+    li
+      p.question
+        = answer.question.text
+
+        ul.list-group.col-md-6
+        - for option in answer.question.options
+          - color = get_color_of_option(answer, option)
+          li.radio.list-group-item
+            == radio_button_tag '', '', the_chosen_one?(answer, option), disabled: true
+            span class="#{color} #{the_chosen_one?(answer, option)}"
+              == option.text

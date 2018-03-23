@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+json = JSON.parse File.read("#{__dir__}/../surveys.json")
+
+json["surveys"].each do |survey|
+  sur = Survey::Survey.create(name: survey["name"], description: survey["desc"])
+
+  survey["questions"].each do |question|
+    qst = Survey::Question.create(survey: sur, text: question["text"])
+
+    question["options"].each do |answer|
+      Survey::Option.create(question: qst, text: answer["text"], correct: answer["correct"] || false)
+    end
+  end
+end

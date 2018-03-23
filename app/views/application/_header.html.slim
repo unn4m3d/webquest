@@ -19,3 +19,25 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark
           - for page in TheoryHelper.pages
             a.dropdown-item href=theory_page_path(page)
               =t("theory.page.#{page}")
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle href="#" id="surveyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          =t('surveys.heading')
+        .dropdown-menu aria-labelledby="surveyDropdown"
+          - for surv in surveys
+            a.dropdown-item href=new_attempt_path(survey_id: surv.id)
+              = surv.name
+    ul.navbar-nav.ml-auto
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            - if user_signed_in?
+              =t('user.common.greeting', user: current_user.email)
+            - else
+              =t('user.guest.greeting')
+        .dropdown-menu aria-labelledby="profileDropdown"
+          - if user_signed_in?
+            == link_to t('user.logout'), destroy_user_session_path, method: :delete, class: "dropdown-item"
+          - else
+            a.dropdown-item href=new_user_session_path
+              =t('user.login')
+            a.dropdown-item href=new_user_registration_path
+              =t('user.register')

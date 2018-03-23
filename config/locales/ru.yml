@@ -8,3 +8,10 @@ ru:
       '1': Рекурсия
       '2': Виды рекурсии
       '3': Рекурсия на практике
+  user:
+    login: Войти
+    register: Зарегистрироваться
+    common:
+      greeting: Привет, %{user}
+    guest:
+      greeting
