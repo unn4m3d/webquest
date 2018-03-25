@@ -1,0 +1,57 @@
+h2 Технологии, примененные в данном проекте
+.row
+  .col-md-4
+    .card
+      img.card-img-top.tech-logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/2000px-Ruby_logo.svg.png"
+      .card-body
+        h5.card-title Ruby
+        p.card-text
+          = "v" + RUBY_VERSION
+        a.btn.btn-primary href="https://github.com/ruby/ruby" GitHub
+        a.btn.btn-secondary href="https://www.ruby-lang.org/en/" Сайт
+
+  .col-md-4
+    .card
+      img.card-img-top.tech-logo src="https://upload.wikimedia.org/wikipedia/commons/1/16/Ruby_on_Rails-logo.png"
+      .card-body
+        h5.card-title Rails
+        p.card-text
+          = "v" + Rails::VERSION::STRING
+        a.btn.btn-primary href="https://github.com/rails/rails" GitHub
+        a.btn.btn-secondary href="https://rubyonrails.org" Сайт
+  .col-md-4
+    .card
+      img.card-img-top.tech-logo src="https://getbootstrap.com/assets/img/bootstrap-stack.png"
+      .card-body
+        h5.card-title Bootstrap
+        p.card-text
+          = "v" + Bootstrap::VERSION
+        a.btn.btn-primary href="https://github.com/twbs/bootstrap-rubygem" GitHub
+        a.btn.btn-secondary href="https://getbootstrap.com" Сайт
+.row
+  .col-md-4
+    .card
+      img.card-img-top.tech-logo src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/2000px-Sass_Logo_Color.svg.png"
+      .card-body
+        h5.card-title SASS/SCSS
+        p.card-text
+          = "v" + Sass::VERSION
+        a.btn.btn-primary href="https://github.com/sass/sass" GitHub
+        a.btn.btn-secondary href="https://sass-lang.com" Сайт
+  .col-md-4
+    .card
+      img.card-img-top.tech-logo src="https://avatars3.githubusercontent.com/u/3170032?s=400&v=4"
+      .card-body
+        h5.card-title Slim
+        p.card-text
+          = "v" + Slim::VERSION
+        a.btn.btn-primary href="https://github.com/slim-template/slim" GitHub
+        a.btn.btn-secondary href="https://slim-lang.org" Сайт
+  .col-md-4
+    .card
+      img.card-img-top.tech-logo src="http://brunakochi.com/images/devise-logo-bg.png"
+      .card-body
+        h5.card-title Devise
+        p.card-text
+          = "v" + Devise::VERSION
+        a.btn.btn-primary href="https://github.com/plataformatec/devise" GitHub
