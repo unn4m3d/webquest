@@ -1,0 +1,33 @@
+p Ниже на нескольких языках программирования записан алгоритм F
+
+.row
+  .col-md-4
+    h5 C
+    pre
+      code
+        | int F(int n)
+          {
+            if(n > 2)
+              return F(n - 1) + F(n - 2);
+            else
+              return n;
+          }
+  .col-md-4
+    h5 Pascal
+    pre
+      code
+        | function F(n : integer) : integer;
+          begin
+            if n > 2
+            then F := F(n - 1) + F(n - 2)
+            else F := n;
+          end;
+  .col-md-4
+    h5 Python
+    pre
+      code
+        | def F(n):
+            if n > 2:
+              return F(n - 1) + F(n - 2)
+            else:
+              return n

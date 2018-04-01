@@ -1,0 +1,47 @@
+p Ниже на нескольких языках программирования записаны алгоритмы F и G
+
+.row
+  .col-md-4
+    h5 C
+    pre
+      code
+        | void G(int n);
+
+          void F(int n)
+          {
+            printf("*");
+            if(n > 0) G(n - 1);
+          }
+
+          void G(int n)
+          {
+            printf("*");
+            if(n > 1) F(n - 2);
+          }
+  .col-md-4
+    h5 Pascal
+    pre
+      code
+        | procedure F(n : integer);
+          begin
+            write('*');
+            if n > 0 then G(n - 1);
+          end;
+
+          procedure G(n : integer);
+          begin
+            write('*');
+            if n > 1 then F(n - 2);
+          end;
+  .col-md-4
+    h5 Python
+    pre
+      code
+        | def F(n):
+            print('*')
+            if n > 0:
+              G(n - 1)
+          def G(n)
+            print('*')
+            if n > 1:
+              F(n - 2)

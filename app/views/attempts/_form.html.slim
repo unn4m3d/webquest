@@ -9,8 +9,8 @@ p.border
     == f.fields_for :answers, get_answer_fields(@attempt) do |answer_fields|
       li
         - question = answer_fields.object.question
-        p.question
-          = question.text
+
+        == render "question", question: question
 
         ul.list-group.col-md-6
           = collection_radio_buttons('survey_attempt[answers_attributes]', question.id, question.options, :id, :text) do |b|

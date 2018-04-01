@@ -8,6 +8,7 @@ ru:
       '1': Рекурсия
       '2': Виды рекурсии
       '3': Рекурсия на практике
+      '4': Решение задания №11 ЕГЭ
   user:
     login: Войти
     register: Зарегистрироваться
@@ -17,3 +18,7 @@ ru:
       greeting: Привет, гость!
   surveys:
     heading: Тесты
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"

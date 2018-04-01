@@ -28,4 +28,8 @@ module AttemptsHelper
   def is_quiz? something
     something == 0 || something == 'quiz'
   end
+
+  def task_for_question(question)
+    Task.where(question_id: question.id).first
+  end
 end

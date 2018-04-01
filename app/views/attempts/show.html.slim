@@ -7,9 +7,8 @@ p.border
 ol.border.border-info
   - for answer in @attempt.answers
     li
-      p.question
-        = answer.question.text
-
+      == render "question", question: answer.question
+      p
         ul.list-group.col-md-6
         - for option in answer.question.options
           - color = get_color_of_option(answer, option)

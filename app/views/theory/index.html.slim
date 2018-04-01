@@ -1,7 +1,10 @@
 .row.col-md-12
   h2 =t('theory.heading')
-.row.col-md-12
-  ul.list-group.col-md-6
-    - for page in @pages
-      li.list-group-item
-        a href=theory_page_path(page: page) =t("theory.page.#{page}")
+- @pages.each_slice(4) do |pgs|
+  .row
+    - for page in pgs
+      .col-md-3
+        .card
+          .card-body
+            h5.card-title =t("theory.page.#{page}")
+            a.btn.btn-primary href=theory_page_path(page: page) Читать
